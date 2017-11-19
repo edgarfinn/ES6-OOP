@@ -46,3 +46,10 @@ console.log(banger.make)
 ```
 
 Here, ```Car``` is the class, and can be used many times
+
+
+Extra reading:
+
+[MDN Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
+
+[MDN construcor keyword](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor)
