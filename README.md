@@ -95,7 +95,7 @@ var Car = class Car {
   }
 }
 ```
-### [Constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor)
+### [Constructor()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor)
 - The constructor method is a special method for creating an object from a class, and initialising that object with a pre-defined set of properties.
 - A class' pre-defined properties can be set using the ```constructor()``` method, and whenever objects are created from the respective class the constructor method is called, and that instance then automatically inherits the properties determined by the constructor method.
 - If no constructor method is specified for a class, a default constructor is automatically used instead.
@@ -117,6 +117,69 @@ console.log(square);
 //  -> Polygon { name: 'Polygon', height: 3, width: 3 }
 ```
 
+### The extends keyword and the [super](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super) keyword
+
+- The ```extends``` keyword can be used in class declarations or class expressions to create a sub-class of an existing class. When using the extends keyword, it is also possible to alter and override pre-existing properties of the parent class.
+
+- The super keyword is used to access and call functions on an object's parent.
+
+```js
+class Polygon {
+  constructor(height, width) {
+    this.name = 'Polygon';
+    this.height = height;
+    this.width = width;
+  }
+}
+
+const mySquare = new Polygon(3,3)
+console.log(mySquare.name)
+// -> Polygon
+
+class Square extends Polygon {
+  constructor(length) {
+    // super calls the parent class (Polygon)'s constructor function
+    super(length, length);
+    // super() must be called before the 'this' keyword can be used.
+    this.name = 'Square';
+  }
+}
+
+const extendSquare = new Square(3);
+console.log(extendSquare.name)
+// -> Square
+
+console.log(typeof Square)
+// -> function
+
+```
+A static method is a method that can only be called on the class or children (ie extansions) of the class. Static methods cannot be called on instances of the class (ie objects created from the class using the ```new``` keyword). Static methods are often used to create utility functions.
+
+```js
+class Human {
+  constructor() {}
+  static ping() {
+    return 'ping';
+  }
+}
+
+class Computer extends Human {
+  constructor() {}
+  static pingpong() {
+    return super.ping() + ' pong';
+  }
+}
+
+const person = new Human();
+
+person.ping()
+// -> TypeError: person.ping is not a function
+
+Computer.ping();
+// -> 'ping'
+Computer.pingpong();
+// -> 'ping pong'
+```
 
 ### [Super keyword](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super)
 
