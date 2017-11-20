@@ -117,7 +117,7 @@ console.log(square);
 //  -> Polygon { name: 'Polygon', height: 3, width: 3 }
 ```
 
-### The extends keyword and the [super](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super) keyword
+### The 'extends' keyword and the ['super'](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super) keyword
 
 - The ```extends``` keyword can be used in class declarations or class expressions to create a sub-class of an existing class. When using the extends keyword, it is also possible to alter and override pre-existing properties of the parent class.
 
@@ -181,7 +181,6 @@ Computer.pingpong();
 // -> 'ping pong'
 ```
 
-### [Super keyword](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super)
 
 > ### Extra reading:
 
