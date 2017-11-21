@@ -125,11 +125,11 @@ console.log(square);
 
 ### The 'extends' keyword and the ['super'](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super) keyword
 
-##### Extends:
+#### Extends:
 
 - The ```extends``` keyword can be used in class declarations or class expressions to create a sub-class of an existing class (it does NOT create instances / objects from those classes). When using the extends keyword, it is possible to alter and override pre-existing properties of the parent class, thereby creating a variation of the original parent class.
 
-##### Super:
+#### Super:
 - The super keyword is used to access and call functions on an object's parent.
 
   - ```super(argument)``` calls the constructor of the parent;
@@ -159,14 +159,44 @@ class Square extends Polygon {
 }
 
 const extendSquare = new Square(3);
-console.log(extendSquare.name)
-// -> Square
+console.log(extendSquare)
+// -> Square { name: 'Square', height: 3, width: 3 }
 
 console.log(typeof Square)
 // -> function
 
 ```
-A static method is a method that can only be called on the class or children (ie extansions) of the class. Static methods cannot be called on instances of the class (ie objects created from the class using the ```new``` keyword). Static methods are often used to create utility functions.
+
+Using ```super``` to call methods of the parent class:
+
+```js
+
+class Parent {
+  talk() {
+    console.log('I am a Parent');
+  }
+}
+
+class Child extends Parent {
+  talk() {
+    console.log('I am a Child');
+  }
+  parentTalk() {
+    // super accesses the talk method on the Parent class.
+    super.talk();
+  }
+}
+
+const junior = new Child();
+
+junior.talk()
+// -> I am a Child
+
+junior.parentTalk()
+//  -> I am a Parent
+
+```
+A static method is a method that can only be called on the class or children (ie extensions) of the class. Static methods cannot be called on instances of the class (ie objects created from the class using the ```new``` keyword). Static methods are often used to create utility functions.
 
 ```js
 class Human {
@@ -179,6 +209,7 @@ class Human {
 class Computer extends Human {
   constructor() {}
   static pingpong() {
+    // parent's static methods can be reached using the super keyword
     return super.ping() + ' pong';
   }
 }
