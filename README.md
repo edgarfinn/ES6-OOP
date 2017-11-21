@@ -77,6 +77,7 @@ UNLIKE function declarations, class declarations are not hoisted. So the class m
 
 ### Class Expressions
 
+
 Class expresssions can be named and unnamed. The name given to a class expression is local to the class's body.
 
 ```js
