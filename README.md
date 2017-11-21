@@ -76,6 +76,7 @@ class Car {
 UNLIKE function declarations, class declarations are not hoisted. So the class must first be defined, before instances of objects can be created from it.
 
 ### Class Expressions
+
 Class expresssions can be named and unnamed. The name given to a class expression is local to the class's body.
 
 ```js
