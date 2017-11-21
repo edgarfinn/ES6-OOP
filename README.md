@@ -101,8 +101,8 @@ var Car = class Car {
 }
 ```
 ### [Constructor()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor)
-
-- A class' pre-defined properties can be set using the ```constructor()``` method. While defining a class, the constructor method is used to determine any properties that instances of that class will be initialised with.
+- All classes have a built-in function called ```constructor()```, which is the first and only function called automatically whenever a new instance of the class is created.
+- A class' pre-defined properties can be set using the ```constructor()``` method. While defining a class, the constructor method is used to determine any properties, which instances of that class will be initialised with.
 - Whenever objects are created from a class, the constructor method is called, and that instance then automatically inherits the properties determined by the constructor method.
 - If no constructor method is specified for a class, a default constructor is automatically used instead.
 
