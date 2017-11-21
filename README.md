@@ -54,7 +54,7 @@ console.log(banger.make)
 Defining classes with ES6
 ---
 
-Classes are like special functions, and as with all functions, can be defined using both class expressions or class declarations.
+In ECMAScript 2015, the ```class``` keyword was introduced to sugar the process of defining and instantiating these Class constructor functions. Classes are special constructor functions, and as with all functions, can be defined using both class expressions or class declarations.
 
 ### Class Declarations
 To declare a class, you use the class keyword with the name of the class
